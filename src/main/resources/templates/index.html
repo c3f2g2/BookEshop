@@ -24,7 +24,12 @@
     <!-- Featured books or new arrivals can be displayed here -->
     <section id="featured-books">
         <h2>Featured Books</h2>
-        <!-- Book items -->
+        <div th:each="book : ${listOfAllBooks}" class="listOfAllBooks">
+            <h3 th:text="${book.getName()}">Book Title</h3>
+            <p th:text="${book.numberOfPages}">Author Name</p>
+
+
+        </div>
     </section>
 </main>
 
