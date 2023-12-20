@@ -18,7 +18,7 @@ public class BookService {
     }
 
     public Book addBook(long id, String name, int numberOfPages){
-        return new Book(id, name,numberOfPages);
+        return new Book(name,numberOfPages);
     }
 
     public void updateBook(Long id, String newName, int newNumberOfPages){

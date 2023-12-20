@@ -28,7 +28,6 @@
 </header>
 
 <nav>
-    <!-- Navigation links -->
     <a href="index.html">Home</a>
     <a href="categories.html">Categories</a>
     <a href="about.html">About Us</a>
@@ -36,6 +35,11 @@
 </nav>
 
 <main>
+    <form action="/search" method="get">
+        <input type="text" name="query" placeholder="Search for books or authors">
+        <button type="submit">Search</button>
+    </form>
+
     <section id="featured-books">
         <h2>Featured Books</h2>
         <div th:each="book : ${listOfAllBooks}" class="listOfAllBooks">

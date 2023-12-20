@@ -15,6 +15,7 @@ import lombok.Setter;
 public class Book {
 
     @ManyToOne
+    @JoinColumn(name = "author_id")
     private Author author;
 
 
@@ -25,8 +26,7 @@ public class Book {
     private int numberOfPages;
 
 
-    public Book(long l, String littlePrince, int i) {
-        this.id = l;
+    public Book(String littlePrince, int i) {
         this.name = littlePrince;
         this.numberOfPages = i;
     }

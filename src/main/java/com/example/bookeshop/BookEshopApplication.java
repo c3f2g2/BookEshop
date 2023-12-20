@@ -23,8 +23,8 @@ public class BookEshopApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        bookRepository.save(new Book(1L, "The Little Prince", 194));
-        authorRepository.save(new Author(1L, "Antoine de Saint-Exupéry"));
+        bookRepository.save(new Book("The Little Prince", 194));
+        authorRepository.save(new Author("Antoine de Saint-Exupéry"));
 
     }
 }
