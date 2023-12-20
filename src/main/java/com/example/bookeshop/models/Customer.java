@@ -25,7 +25,7 @@ public class Customer {
     private String emailAddress;
     private String password;
 
-    private List<Book> shoppingBasket = new ArrayList<>();
+//    private List<Book> shoppingBasket = new ArrayList<>();
 
 
 }

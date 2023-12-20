@@ -14,20 +14,20 @@ import lombok.Setter;
 @Table(name = "Book")
 public class Book {
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
     private Author author;
 
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private int numberOfPages;
 
 
-    public Book(String littlePrince, int i) {
-        this.name = littlePrince;
-        this.numberOfPages = i;
+    public Book(String name, int numberOfPages) {
+        this.name = name;
+        this.numberOfPages = numberOfPages;
     }
 }
