@@ -32,6 +32,10 @@ public class BookService {
         return bookRepository.findAll();
     }
 
+    public Book getSingleBook(Long id){
+        return bookRepository.getReferenceById(id);
+    }
+
 
 
 }

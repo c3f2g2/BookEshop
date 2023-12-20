@@ -1,8 +1,6 @@
 package com.example.bookeshop.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +11,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "Book")
 public class Book {
+
+    @ManyToOne
+    private Author author;
+
 
     @Id
     @GeneratedValue
@@ -21,4 +24,10 @@ public class Book {
     private String name;
     private int numberOfPages;
 
+
+    public Book(long l, String littlePrince, int i) {
+        this.id = l;
+        this.name = littlePrince;
+        this.numberOfPages = i;
+    }
 }

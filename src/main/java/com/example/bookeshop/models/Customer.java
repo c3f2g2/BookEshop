@@ -8,6 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -21,6 +24,8 @@ public class Customer {
     private String username;
     private String emailAddress;
     private String password;
+
+    private List<Book> shoppingBasket = new ArrayList<>();
 
 
 }
