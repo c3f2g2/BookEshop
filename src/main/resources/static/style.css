@@ -1,83 +1,118 @@
-body, h1, h2, h3, p, ul, nav, main, aside, footer {
+/* Basic Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* White background */
+    color: #333333;
     line-height: 1.6;
-    color: #333;
-    background-color: #fff;
 }
 
-
+/* Header Styles */
 header {
-    background-color: #fff;
-    color: #000;
+    background-color: #A17C48; /* Bronze background */
+    color: white;
     text-align: center;
     padding: 1rem 0;
 }
 
-
-nav {
-    background-color: #0044cc;
+header a {
     color: white;
-    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #E6F7FF; /* Light blue background */
     padding: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav a {
-    color: white;
+    color: #333;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 15px;
+    font-weight: bold;
 }
 
 nav a:hover {
-    color: #ddd;
+    color: #A17C48; /* Bronze color for hover */
 }
 
+/* Form Styles */
+.form-group {
+    margin-bottom: 15px;
+}
 
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"], button {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+}
+
+/* Button Styles */
+button {
+    background-color: #A17C48; /* Bronze background */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #8F6B3F; /* Darker shade of bronze */
+}
+
+/* Main Content Styles */
 main {
     padding: 20px;
 }
 
-
-#featured-books {
+.section-header {
+    color: #A17C48; /* Bronze color */
     margin-bottom: 20px;
 }
 
-
-aside {
-    background-color: #f4f4f4;
-    padding: 20px;
+.book, .listOfAllBooks {
+    background-color: #E6F7FF; /* Light blue background */
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
 }
 
-aside h3 {
-    margin-bottom: 10px;
-}
-
-aside ul {
-    list-style-type: none;
-}
-
-aside ul li {
-    margin-bottom: 5px;
-}
-
-
+/* Footer Styles */
 footer {
-    background-color: white;
-    color: #000;
+    background-color: #A17C48; /* Bronze background */
+    color: white;
     text-align: center;
     padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
-h1 a {
-    text-decoration: none;
-    color: inherit;
-}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
 
-h1 a:visited {
-    color: inherit;
+    nav a {
+        margin-bottom: 5px;
+    }
 }
