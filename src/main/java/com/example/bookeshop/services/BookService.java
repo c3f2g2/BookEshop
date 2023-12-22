@@ -1,7 +1,9 @@
 package com.example.bookeshop.services;
 
+import com.example.bookeshop.models.Author;
 import com.example.bookeshop.models.Book;
 import com.example.bookeshop.models.Category;
+import com.example.bookeshop.repositories.AuthorRepository;
 import com.example.bookeshop.repositories.BookRepository;
 import com.example.bookeshop.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,17 +16,21 @@ public class BookService {
 
     private final BookRepository bookRepository;
     private final CategoryRepository categoryRepository;
+    private final AuthorRepository authorRepository;
 
     @Autowired
-    public BookService (BookRepository bookRepository, CategoryRepository categoryRepository){
+    public BookService (BookRepository bookRepository, CategoryRepository categoryRepository, AuthorRepository authorRepository){
         this.bookRepository = bookRepository;
         this.categoryRepository = categoryRepository;
+        this.authorRepository = authorRepository;
     }
 
-    public Book addBook(String name, int numberOfPages, Long categoryID){
+    public Book addBook(String name, int numberOfPages, Long categoryID, Long authorID){
         Category category = categoryRepository.findById(categoryID).orElse(null);
+        Author author = authorRepository.findById(authorID).orElse(null);
         Book book = new Book(name,numberOfPages);
         book.setCategory(category);
+        book.setAuthor(author);
         return book;
     }
 

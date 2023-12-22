@@ -17,11 +17,11 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Table(name = "Author")
 public class Author {
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private HashSet<Book> listOfAuthorsBooks = new HashSet<>();
+    private List<Book> listOfAuthorsBooks = new ArrayList<>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
