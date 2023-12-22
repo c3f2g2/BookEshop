@@ -28,10 +28,12 @@ public class Book {
     private Long id;
     private String name;
     private int numberOfPages;
+    private int price;
 
 
-    public Book(String name, int numberOfPages) {
+    public Book(String name, int numberOfPages, int price) {
         this.name = name;
         this.numberOfPages = numberOfPages;
+        this.price = price;
     }
 }

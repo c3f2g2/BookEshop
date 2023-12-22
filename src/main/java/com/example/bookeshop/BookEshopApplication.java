@@ -24,8 +24,8 @@ public class BookEshopApplication implements CommandLineRunner {
     private final AuthorRepository authorRepository;
     private final CustomerRepository customerRepository;
     private final CategoryRepository categoryRepository;
-    private final AuthorService authorService;
 
+    private final AuthorService authorService;
     private final CategoryService categoryService;
     private final BookService bookService;
 
@@ -36,16 +36,16 @@ public class BookEshopApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         authorService.addAuthor("Antoine de Saint-Exupéry");
-        
+
         categoryRepository.save(new Category("Poetry"));
         categoryRepository.save(new Category("Fantasy"));
         categoryRepository.save(new Category("Adventure"));
         categoryRepository.save(new Category("Romance"));
 
-        Book book1 = bookService.addBook("The Little Prince", 194, 1L, 1L);
-        Book book2 = bookService.addBook("Resurrection", 308, 2L, 1L);
-        Book book3 = bookService.addBook("Hamlet", 220, 3L, 1L);
-        Book book4 = bookService.addBook("Factotum", 278, 4L, 1L);
+        Book book1 = bookService.addBook("The Little Prince", 194, 1L, 1L, 299);
+        Book book2 = bookService.addBook("Resurrection", 308, 2L, 1L, 359);
+        Book book3 = bookService.addBook("Hamlet", 220, 3L, 1L, 439);
+        Book book4 = bookService.addBook("Factotum", 278, 4L, 1L, 199);
         bookRepository.save(book1);
         bookRepository.save(book2);
         bookRepository.save(book3);

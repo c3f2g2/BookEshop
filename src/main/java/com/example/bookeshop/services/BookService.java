@@ -25,10 +25,10 @@ public class BookService {
         this.authorRepository = authorRepository;
     }
 
-    public Book addBook(String name, int numberOfPages, Long categoryID, Long authorID){
+    public Book addBook(String name, int numberOfPages, Long categoryID, Long authorID, int price){
         Category category = categoryRepository.findById(categoryID).orElse(null);
         Author author = authorRepository.findById(authorID).orElse(null);
-        Book book = new Book(name,numberOfPages);
+        Book book = new Book(name,numberOfPages, price);
         book.setCategory(category);
         book.setAuthor(author);
         return book;
