@@ -9,6 +9,7 @@ import com.example.bookeshop.repositories.BookRepository;
 
 import com.example.bookeshop.repositories.CategoryRepository;
 import com.example.bookeshop.repositories.CustomerRepository;
+import com.example.bookeshop.services.AuthorService;
 import com.example.bookeshop.services.BookService;
 import com.example.bookeshop.services.CategoryService;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +24,7 @@ public class BookEshopApplication implements CommandLineRunner {
     private final AuthorRepository authorRepository;
     private final CustomerRepository customerRepository;
     private final CategoryRepository categoryRepository;
+    private final AuthorService authorService;
 
     private final CategoryService categoryService;
     private final BookService bookService;
@@ -33,9 +35,8 @@ public class BookEshopApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        bookRepository.save(new Book(1L, "The Little Prince", 194));
-//        Author author1 = new Author("Antoine de Saint-Exupéry");
-//        authorRepository.save(author1);
+//        Author author1 = authorService.addAuthor("Antoine de Saint-Exupéry");
+        authorRepository.save(new Author("Antoine de Saint-Exupéry"));
 
         categoryRepository.save(new Category("Poetry"));
         categoryRepository.save(new Category("Fantasy"));
@@ -50,6 +51,8 @@ public class BookEshopApplication implements CommandLineRunner {
         bookRepository.save(book2);
         bookRepository.save(book3);
         bookRepository.save(book4);
+
+
 
     }
 }

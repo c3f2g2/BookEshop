@@ -12,8 +12,8 @@ import java.util.List;
 @Service
 public class BookService {
 
-    private BookRepository bookRepository;
-    private CategoryRepository categoryRepository;
+    private final BookRepository bookRepository;
+    private final CategoryRepository categoryRepository;
 
     @Autowired
     public BookService (BookRepository bookRepository, CategoryRepository categoryRepository){

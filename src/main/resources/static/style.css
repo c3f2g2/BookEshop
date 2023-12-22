@@ -1,10 +1,9 @@
-/* Reset some basic elements */
 body, h1, h2, h3, p, ul, nav, main, aside, footer {
     margin: 0;
     padding: 0;
 }
 
-/* Basic body styling */
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -12,7 +11,7 @@ body {
     background-color: #fff;
 }
 
-/* Header styles */
+
 header {
     background-color: #fff;
     color: #000;
@@ -20,7 +19,7 @@ header {
     padding: 1rem 0;
 }
 
-/* Navigation bar styles */
+
 nav {
     background-color: #0044cc;
     color: white;
@@ -38,17 +37,17 @@ nav a:hover {
     color: #ddd;
 }
 
-/* Main section styles */
+
 main {
     padding: 20px;
 }
 
-/* Featured books styles */
+
 #featured-books {
     margin-bottom: 20px;
 }
 
-/* Aside (Categories) styles */
+
 aside {
     background-color: #f4f4f4;
     padding: 20px;
@@ -66,10 +65,19 @@ aside ul li {
     margin-bottom: 5px;
 }
 
-/* Footer styles */
+
 footer {
     background-color: white;
     color: #000;
     text-align: center;
     padding: 1rem 0;
+}
+
+h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 a:visited {
+    color: inherit;
 }

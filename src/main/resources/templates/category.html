@@ -28,7 +28,7 @@
 </header>
 
 <nav>
-    <a href="index.html">Home</a>
+    <a href="/">Home</a>
     <a href="categories.html">Categories</a>
     <a href="about.html">About Us</a>
     <a href="contact.html">Contact</a>
@@ -44,7 +44,8 @@
         <h2>Books in Category</h2>
         <div th:each="book : ${books}" class="book">
             <h3 th:text="${book.name}">Book Title</h3>
-            <p th:text="${book.numberOfPages} + ' pages'">Number of Pages</p>
+            <p th:text="${book.category.getName()}">Category</p>
+            <p th:text="${book.numberOfPages} + ' pages'">Pages</p>
         </div>
     </section>
 </main>
@@ -57,7 +58,7 @@
 </aside>
 
 <footer>
-    <p>Contact us: manny@blackbooks.com</p>
+    <p>Contact us: manny.bianco@blackbooks.com</p>
     <p>Black Books Ltd. London</p>
 </footer>
 
