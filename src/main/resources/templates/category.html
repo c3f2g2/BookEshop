@@ -41,10 +41,10 @@
     </form>
 
     <section id="featured-books">
-        <h2>Featured Books</h2>
-        <div th:each="book : ${listOfAllBooks}" class="listOfAllBooks">
-            <h3 th:text="${book.getName()}">Book Title</h3>
-            <p th:text="${book.numberOfPages}">Author Name</p>
+        <h2>Books in Category</h2>
+        <div th:each="book : ${books}" class="book">
+            <h3 th:text="${book.name}">Book Title</h3>
+            <p th:text="${book.numberOfPages} + ' pages'">Number of Pages</p>
         </div>
     </section>
 </main>
