@@ -2,14 +2,13 @@ package com.example.bookeshop;
 
 import com.example.bookeshop.models.Author;
 //import com.example.bookeshop.models.Book;
+import com.example.bookeshop.models.Basket;
 import com.example.bookeshop.models.Book;
 import com.example.bookeshop.models.Category;
-import com.example.bookeshop.repositories.AuthorRepository;
-import com.example.bookeshop.repositories.BookRepository;
+import com.example.bookeshop.repositories.*;
 
-import com.example.bookeshop.repositories.CategoryRepository;
-import com.example.bookeshop.repositories.CustomerRepository;
 import com.example.bookeshop.services.AuthorService;
+import com.example.bookeshop.services.BasketService;
 import com.example.bookeshop.services.BookService;
 import com.example.bookeshop.services.CategoryService;
 import lombok.RequiredArgsConstructor;
@@ -24,10 +23,12 @@ public class BookEshopApplication implements CommandLineRunner {
     private final AuthorRepository authorRepository;
     private final CustomerRepository customerRepository;
     private final CategoryRepository categoryRepository;
+    private final BasketRepository basketRepository;
 
     private final AuthorService authorService;
     private final CategoryService categoryService;
     private final BookService bookService;
+    private final BasketService basketService;
 
     public static void main(String[] args) {
         SpringApplication.run(BookEshopApplication.class, args);
@@ -36,6 +37,7 @@ public class BookEshopApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         authorService.addAuthor("Antoine de Saint-Exupéry");
+        basketRepository.save(new Basket());
 
         categoryRepository.save(new Category("Poetry"));
         categoryRepository.save(new Category("Fantasy"));

@@ -22,11 +22,11 @@ public class BasketController {
     private BasketService basketService;
     private BookRepository bookRepository;
     @PostMapping("basket/add")
-    public String addBookToBasket(@RequestParam("bookID") Long bookID, @RequestParam("quantity") int quantity, Model model){
+    public String addBookToBasket(@RequestParam("bookId") Long bookID, @RequestParam("quantity") int quantity, Model model){
         Long basketID = 1L; //Fixed basketID for now
         Book book = bookRepository.findById(bookID).orElse(null);
         basketService.addToBasket(basketID, book, quantity);
-        return "redirect/basket";
+        return "redirect:/basket";
     }
 
     @GetMapping("/basket")
@@ -34,7 +34,13 @@ public class BasketController {
         Long basketId = 1L; //Fixed basketID for now
         Basket basket = basketService.getBasket(basketId);
         model.addAttribute("basket", basket);
-        return "basket"; 
+        return "basket";
+    }
+
+    @PostMapping("basket/remove")
+    public String removeBookFromBasket(){
+        
+        return "redirect:/basket";
     }
 
 }

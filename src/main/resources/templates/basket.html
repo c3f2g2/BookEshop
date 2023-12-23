@@ -26,6 +26,30 @@
     </form>
 </header>
 
+<h2>Your Basket</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Book Title</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${basket.items}">
+        <td th:text="${item.book.name}">Book Title</td>
+        <td th:text="${item.quantity}">1</td>
+        <td th:text="${item.book.price}">Price</td>
+        <td th:text="${item.quantity * item.book.price}">Total</td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="/proceed-to-purchase" method="post">
+    <button type="submit">Proceed to Purchase</button>
+</form>
+
 
 </body>
 </html>
