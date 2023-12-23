@@ -14,10 +14,11 @@ public class BasketService {
     private BasketRepository basketRepository;
 
     public Basket addToBasket(Long basketId, Book book, int quantity) {
-    Basket basket = basketRepository.findById(basketId).orElse(null);
-    BasketItem item= new BasketItem();
+    Basket basket = basketRepository.findById(basketId).orElseThrow(()-> new IllegalArgumentException("Book not found"));
+    BasketItem item = new BasketItem();
     item.setBook(book);
     item.setQuantity(quantity);
+    basket.getItems().add(item);
     return basketRepository.save(basket);
     }
 

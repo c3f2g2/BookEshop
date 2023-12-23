@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Black Books</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1><a href="/">Black Books</a></h1>
+
+    <button type="submit">Register</button>
+
+    <form action="/login" method="post">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <button type="submit">Login</button>
+    </form>
+</header>
+
+
+</body>
+</html>

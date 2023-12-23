@@ -1,52 +1,57 @@
-/* Basic Reset */
-* {
+/* Reset some basic elements */
+body, h1, h2, h3, p, ul, li, form, input, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #ffffff; /* White background */
-    color: #333333;
-    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-/* Header Styles */
+/* Header styles */
 header {
-    background-color: #A17C48; /* Bronze background */
-    color: white;
+    background-color: #e0f0ff;
+    padding: 10px; /* Reduced padding */
     text-align: center;
-    padding: 1rem 0;
 }
 
-header a {
-    color: white;
+header h1 {
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+header h1 a {
     text-decoration: none;
-    font-size: 2rem;
+    color: #333;
 }
 
-/* Navigation Styles */
+/* Form in header - constrain its width */
+header form {
+    width: auto; /* Adjust width as needed */
+    margin: 0 auto; /* Center the form */
+    display: inline-block; /* Keep form inline */
+}
+
+/* Navigation bar styles */
 nav {
-    background-color: #E6F7FF; /* Light blue background */
-    padding: 0.5rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #d0e8ff;
+    padding: 10px;
+    text-align: center;
 }
 
 nav a {
-    color: #333;
-    text-decoration: none;
     margin: 0 15px;
-    font-weight: bold;
+    text-decoration: none;
+    color: #333;
 }
 
-nav a:hover {
-    color: #A17C48; /* Bronze color for hover */
+/* Form styles */
+form {
+    margin: 20px 0;
 }
 
-/* Form Styles */
 .form-group {
     margin-bottom: 15px;
 }
@@ -56,63 +61,96 @@ label {
     margin-bottom: 5px;
 }
 
-input[type="text"], input[type="password"], button {
+input[type="text"],
+input[type="password"] {
     width: 100%;
-    padding: 8px;
-    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ddd;
-    margin-top: 5px;
 }
 
-/* Button Styles */
 button {
-    background-color: #A17C48; /* Bronze background */
+    background-color: #0056b3;
     color: white;
+    padding: 10px 15px;
     border: none;
     cursor: pointer;
-    padding: 10px 15px;
-    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #8F6B3F; /* Darker shade of bronze */
+    background-color: #004494;
 }
 
-/* Main Content Styles */
+/* Main content styles */
 main {
+    padding: 5px;
+}
+
+#featured-books {
+    margin-top: 5px;
+}
+
+.listOfAllBooks {
+    background-color: #e0f0ff;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+/* Sidebar styles */
+aside {
+    background-color: #d0e8ff;
     padding: 20px;
 }
 
-.section-header {
-    color: #A17C48; /* Bronze color */
-    margin-bottom: 20px;
+.listOfAllCategories li a {
+    text-decoration: none;
+    color: #333;
 }
 
-.book, .listOfAllBooks {
-    background-color: #E6F7FF; /* Light blue background */
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-}
-
-/* Footer Styles */
+/* Footer styles */
 footer {
-    background-color: #A17C48; /* Bronze background */
-    color: white;
+    background-color: #e0f0ff;
     text-align: center;
-    padding: 1rem 0;
-    position: absolute;
-    bottom: 0;
+    padding: 20px;
+    /*position: fixed;*/
     width: 100%;
+    bottom: 0;
 }
 
-/* Responsive Adjustments */
+/* Responsive design adjustments */
 @media (max-width: 768px) {
-    nav {
+    header, nav, main, aside, footer {
+        text-align: center;
+    }
+
+    header form {
+        width: 100%;
+    }
+}
+#featured-books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjusts spacing between books */
+    margin-top: 5px;
+}
+
+.listOfAllBooks {
+    background-color: #e0f0ff;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd; /* Optional border for better visibility */
+    flex: 0 0 30%; /* Adjust width as needed, and ensures items don't shrink or grow */
+    margin: 0px; /* Adds some space around each book */
+    text-align: center; /* Center the text inside each book div */
+}
+
+
+@media (max-width: 768px) {
+    #featured-books {
         flex-direction: column;
     }
 
-    nav a {
-        margin-bottom: 5px;
+    .listOfAllBooks {
+        flex: 0 0 100%; /* Full width on smaller screens */
     }
 }
