@@ -40,8 +40,8 @@
     <tr th:each="item : ${basket.items}">
         <td th:text="${item.book.name}">Book Title</td>
         <td th:text="${item.quantity}">1</td>
-        <td th:text="${item.book.price}">Price</td>
-        <td th:text="${item.quantity * item.book.price}">Total</td>
+        <td th:text="${item.book.price} + ' CZK'">Price</td>
+        <td th:text="${item.quantity * item.book.price} + ' CZK'">Total</td>
         <td>
             <form th:action="@{/basket/remove}" method="post">
                 <input type="hidden" th:name="bookId" th:value="${item.book.id}" />
@@ -49,9 +49,11 @@
             </form>
         </td>
     </tr>
-    <p></p>
+
     </tbody>
 </table>
+
+<h3>Total Price: <span th:text="${totalPrice}"></span> CZK</h3>
 
 <form action="/proceed-to-purchase" method="post">
     <button type="submit">Proceed to Purchase</button>

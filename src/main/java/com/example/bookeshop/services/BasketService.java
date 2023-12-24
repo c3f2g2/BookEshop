@@ -7,6 +7,8 @@ import com.example.bookeshop.repositories.BasketRepository;
 import com.example.bookeshop.repositories.BookRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.stream.Collectors;
+
 @Service
 public class BasketService {
 
@@ -31,9 +33,15 @@ public class BasketService {
     return basketRepository.findById(basketId).orElse(null);
     }
 
-    public void removeFromBasket(Book book){
-
+    public void removeFromBasket(Long basketId, Long bookId) {
+        Basket basket = basketRepository.findById(basketId)
+                .orElseThrow(() -> new IllegalArgumentException("Basket not found"));
+        basket.setItems(basket.getItems().stream()
+                .filter(item -> !item.getBook().getId().equals(bookId))
+                .collect(Collectors.toList()));
+        basketRepository.save(basket);
     }
+
 
 
 

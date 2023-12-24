@@ -40,10 +40,9 @@ public class BasketController {
     }
 
     @PostMapping("basket/remove")
-    public String removeBookFromBasket(@RequestParam("bookId") Long bookId, Model model){
+    public String removeBookFromBasket(@RequestParam("bookId") Long bookId){
         Long basketID = 1L; //Fixed basketID for now
-        Book book = bookRepository.findById(bookId).orElse(null);
-        basketService.removeFromBasket(book);
+        basketService.removeFromBasket(basketID, bookId);
         return "redirect:/basket";
     }
 
