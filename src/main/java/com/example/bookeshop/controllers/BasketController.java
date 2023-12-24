@@ -33,13 +33,17 @@ public class BasketController {
     public String viewBasket(Model model) {
         Long basketId = 1L; //Fixed basketID for now
         Basket basket = basketService.getBasket(basketId);
+        int totalPrice = basket.calculateTotalPrice();
         model.addAttribute("basket", basket);
+        model.addAttribute("totalPrice", totalPrice);
         return "basket";
     }
 
     @PostMapping("basket/remove")
-    public String removeBookFromBasket(){
-        
+    public String removeBookFromBasket(@RequestParam("bookId") Long bookId, Model model){
+        Long basketID = 1L; //Fixed basketID for now
+        Book book = bookRepository.findById(bookId).orElse(null);
+        basketService.removeFromBasket(book);
         return "redirect:/basket";
     }
 

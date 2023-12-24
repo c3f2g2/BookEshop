@@ -31,7 +31,11 @@ public class BasketService {
     return basketRepository.findById(basketId).orElse(null);
     }
 
-    public void removeFromBasket(){
+    public void removeFromBasket(Book book){
 
     }
+
+
+
+
 }

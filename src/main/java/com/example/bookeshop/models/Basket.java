@@ -19,9 +19,16 @@ public class Basket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private int totalPrice;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<BasketItem> items = new ArrayList<>();
 
-
+    public int calculateTotalPrice() {
+        return items.stream()
+                .mapToInt(item -> item.getBook().getPrice() * item.getQuantity())
+                .sum();
+    }
 }
+
+
