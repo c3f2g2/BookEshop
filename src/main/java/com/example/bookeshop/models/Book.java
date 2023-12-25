@@ -28,12 +28,14 @@ public class Book {
     private Long id;
     private String name;
     private int numberOfPages;
-    private int price;
+    private Long price;
+    private int quantityOnStock;
 
 
-    public Book(String name, int numberOfPages, int price) {
+    public Book(String name, int numberOfPages, Long price, int quantityOnStock) {
         this.name = name;
         this.numberOfPages = numberOfPages;
         this.price = price;
+        this.quantityOnStock = quantityOnStock;
     }
 }

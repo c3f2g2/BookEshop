@@ -13,7 +13,6 @@ public class PurchaseController {
 
     @PostMapping("/proceed-purchase")
     public String proceedPurchase() {
-
         return "purchaseProceeding";
     }
 

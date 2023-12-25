@@ -44,10 +44,10 @@ public class BookEshopApplication implements CommandLineRunner {
         categoryRepository.save(new Category("Adventure"));
         categoryRepository.save(new Category("Romance"));
 
-        Book book1 = bookService.addBook("The Little Prince", 194, 1L, 1L, 299);
-        Book book2 = bookService.addBook("Resurrection", 308, 2L, 1L, 359);
-        Book book3 = bookService.addBook("Hamlet", 220, 3L, 1L, 439);
-        Book book4 = bookService.addBook("Factotum", 278, 4L, 1L, 199);
+        Book book1 = bookService.addBook("The Little Prince", 194, 1L, 1L, 299L, 10);
+        Book book2 = bookService.addBook("Resurrection", 308, 2L, 1L, 359L,10);
+        Book book3 = bookService.addBook("Hamlet", 220, 3L, 1L, 439L,10);
+        Book book4 = bookService.addBook("Factotum", 278, 4L, 1L, 199L,10);
         bookRepository.save(book1);
         bookRepository.save(book2);
         bookRepository.save(book3);
