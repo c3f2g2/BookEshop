@@ -1,4 +1,4 @@
-/* Reset some basic elements */
+
 body, h1, h2, h3, p, ul, li, form, input, button {
     margin: 0;
     padding: 0;
@@ -11,15 +11,15 @@ body {
     color: #333;
 }
 
-/* Header styles */
+
 header {
     background-color: #e0f0ff;
-    padding: 10px; /* Reduced padding */
+    padding: 10px;
     text-align: center;
 }
 
 header h1 {
-    margin-bottom: 10px; /* Reduced margin */
+    margin-bottom: 10px;
 }
 
 header h1 a {
@@ -27,14 +27,14 @@ header h1 a {
     color: #333;
 }
 
-/* Form in header - constrain its width */
+
 header form {
-    width: auto; /* Adjust width as needed */
-    margin: 0 auto; /* Center the form */
-    display: inline-block; /* Keep form inline */
+    width: auto;
+    margin: 0 auto;
+    display: inline-block;
 }
 
-/* Navigation bar styles */
+
 nav {
     background-color: #d0e8ff;
     padding: 10px;
@@ -47,7 +47,7 @@ nav a {
     color: #333;
 }
 
-/* Form styles */
+
 form {
     margin: 20px 0;
 }
@@ -81,13 +81,9 @@ button:hover {
     background-color: #004494;
 }
 
-/* Main content styles */
+
 main {
     padding: 5px;
-}
-
-#featured-books {
-    margin-top: 5px;
 }
 
 .listOfAllBooks {
@@ -96,7 +92,7 @@ main {
     margin-bottom: 5px;
 }
 
-/* Sidebar styles */
+
 aside {
     background-color: #d0e8ff;
     padding: 20px;
@@ -107,17 +103,17 @@ aside {
     color: #333;
 }
 
-/* Footer styles */
+
 footer {
     background-color: #e0f0ff;
     text-align: center;
     padding: 20px;
-    /*position: fixed;*/
+
     width: 100%;
     bottom: 0;
 }
 
-/* Responsive design adjustments */
+
 @media (max-width: 768px) {
     header, nav, main, aside, footer {
         text-align: center;
@@ -130,7 +126,7 @@ footer {
 #featured-books {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Adjusts spacing between books */
+    justify-content: space-around;
     margin-top: 5px;
 }
 
@@ -138,10 +134,10 @@ footer {
     background-color: #e0f0ff;
     padding: 5px;
     margin-bottom: 5px;
-    border: 1px solid #ddd; /* Optional border for better visibility */
-    flex: 0 0 30%; /* Adjust width as needed, and ensures items don't shrink or grow */
-    margin: 0px; /* Adds some space around each book */
-    text-align: center; /* Center the text inside each book div */
+    border: 1px solid #ddd;
+    flex: 0 0 15%;
+    margin: 0px;
+    text-align: center; /
 }
 
 
@@ -151,6 +147,11 @@ footer {
     }
 
     .listOfAllBooks {
-        flex: 0 0 100%; /* Full width on smaller screens */
+        flex: 0 0 100%;
     }
+}
+
+#featured-books {
+    opacity: 0;
+    transition: opacity 2s;
 }

@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>Welcome to the Black Books</title>
     <link rel="stylesheet" href="style.css">
-    <script src="/blackBooks.js"></script>
-
 </head>
 <body>
 
@@ -41,9 +39,8 @@
         <input type="text" name="query" placeholder="Search for books or authors">
         <button type="submit">Search</button>
     </form>
-
+    <h2>Featured Books</h2>
     <section id="featured-books">
-        <h2>Featured Books</h2>
         <div th:each="book : ${listOfAllBooks}" class="listOfAllBooks">
             <h3 th:text="${book.getName()}">Title</h3>
             <p th:text="${book.author.name}">Author</p>
@@ -74,6 +71,8 @@
     <p>Contact us: manny.bianco@blackbooks.com</p>
     <p>Black Books Ltd. London</p>
 </footer>
+
+<script src="/blackBooks.js"></script>
 
 </body>
 </html>
