@@ -46,6 +46,7 @@
             <p th:text="${book.author.name}">Author</p>
             <p th:text="${book.category.getName()}">Category</p>
             <p th:text="${book.numberOfPages} + ' pages'">Pages</p>
+            <p th:text="${book.quantityOnStock} + ' pcs on stock'">On stock</p>
             <p th:text="${book.price} + ' CZK'">Price</p>
 
             <form th:action="@{/basket/add}" method="post">

@@ -51,6 +51,12 @@ public class BookService {
         return bookRepository.getReferenceById(id);
     }
 
+    public void decreaseQuantityOnStock(Long id, int quantity) {
+        int updatedQuantity = bookRepository.getReferenceById(id).getQuantityOnStock() - quantity;
+        bookRepository.getReferenceById(id).setQuantityOnStock(updatedQuantity);
+    }
+
+
 
 
 }
