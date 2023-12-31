@@ -42,6 +42,11 @@ public class BasketService {
         basketRepository.save(basket);
     }
 
+    public void clearBasket(Long basketId) {
+        Basket basket = basketRepository.findById(basketId).orElseThrow(() -> new IllegalArgumentException("Basket not found"));
+        basket.getItems().clear();
+        basketRepository.save(basket);
+    }
 
 
 

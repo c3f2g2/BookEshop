@@ -52,8 +52,13 @@ public class BookService {
     }
 
     public void decreaseQuantityOnStock(Long bookID, int quantity) {
-        int updatedQuantity = bookRepository.getReferenceById(bookID).getQuantityOnStock() - quantity;
-        bookRepository.getReferenceById(bookID).setQuantityOnStock(updatedQuantity);
+        Book book = bookRepository.findById(bookID).orElseThrow(() -> new IllegalArgumentException("Book not found"));
+        int updatedQuantity = book.getQuantityOnStock() - quantity;
+        if(updatedQuantity <= 0){
+            throw new IllegalArgumentException("Not enough pieces of book on stock");
+        }
+        book.setQuantityOnStock(updatedQuantity);
+        bookRepository.save(book);
     }
 
 

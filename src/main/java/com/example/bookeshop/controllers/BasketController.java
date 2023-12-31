@@ -71,8 +71,7 @@ public class BasketController {
             bookRepository.save(book);
         }
 
-        // Clear the basket after purchase
-//        basketService.clearBasket(basketId);
+        basketService.clearBasket(basketId);
 
         // Add any confirmation details to the model
         model.addAttribute("success", "Your purchase has been confirmed!");
