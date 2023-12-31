@@ -55,7 +55,7 @@ public class BookService {
         int updatedQuantity = bookRepository.getReferenceById(bookID).getQuantityOnStock() - quantity;
         bookRepository.getReferenceById(bookID).setQuantityOnStock(updatedQuantity);
     }
-    
+
 
 
 
