@@ -66,16 +66,12 @@ public class BasketController {
                 model.addAttribute("error", "Insufficient stock for " + book.getName());
                 return "basket";
             }
-
             bookService.decreaseQuantityOnStock(book.getId(), quantity);
             bookRepository.save(book);
         }
 
         basketService.clearBasket(basketId);
-
-        // Add any confirmation details to the model
         model.addAttribute("success", "Your purchase has been confirmed!");
-
         return "purchaseConfirmation"; // Redirect to a confirmation page
     }
 
