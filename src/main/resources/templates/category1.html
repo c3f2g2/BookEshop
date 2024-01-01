@@ -29,7 +29,7 @@
 
 <nav>
     <a href="/">Home</a>
-    <a href="category.html">Categories</a>
+    <a href="categories.html">Categories</a>
     <a href="about.html">About Us</a>
     <a href="contact.html">Contact</a>
 </nav>
@@ -39,24 +39,15 @@
         <input type="text" name="query" placeholder="Search for books or authors">
         <button type="submit">Search</button>
     </form>
-    <h2>Featured Books</h2>
-    <section id="featured-books">
-        <div th:each="book : ${listOfAllBooks}" class="listOfAllBooks">
-            <h3 th:text="${book.getName()}">Title</h3>
-            <p th:text="${book.author.name}">Author</p>
+
+    <section id="featured-books1">
+        <h2>Books in Category</h2>
+        <div th:each="book : ${books}" class="book">
+            <h3 th:text="${book.name}">Book Title</h3>
             <p th:text="${book.category.getName()}">Category</p>
             <p th:text="${book.numberOfPages} + ' pages'">Pages</p>
-            <p th:text="${book.quantityOnStock} + ' pcs on stock'">On stock</p>
-            <p th:text="${book.price} + ' CZK'">Price</p>
-
-            <form th:action="@{/basket/add}" method="post">
-                <input type="hidden" th:name="bookId" th:value="${book.id}" />
-                <div class="form-group">
-                    <label for="quantity_${book.id}">Quantity:</label>
-                    <input type="number" id="quantity_${book.id}" name="quantity" min="1" value="1" required>
-                </div>
-                <button type="submit">Add to basket</button>
-            </form>
+            <p th:text="${book.price} + ' CZK'">Pages</p>
+            <button type="submit">Add to basket</button>
         </div>
     </section>
 </main>

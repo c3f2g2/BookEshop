@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to the Black Books</title>
+    <title>Black Books</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,7 +29,7 @@
 
 <nav>
     <a href="/">Home</a>
-    <a href="categories.html">Categories</a>
+    <a href="category.html">Categories</a>
     <a href="about.html">About Us</a>
     <a href="contact.html">Contact</a>
 </nav>
@@ -40,7 +40,7 @@
         <button type="submit">Search</button>
     </form>
 
-    <section id="featured-books">
+    <section id="featured-books1">
         <h2>Books in Category</h2>
         <div th:each="book : ${books}" class="book">
             <h3 th:text="${book.name}">Book Title</h3>
