@@ -31,6 +31,7 @@ public class BookService {
         Book book = new Book(name,numberOfPages, price, quantity);
         book.setCategory(category);
         book.setAuthor(author);
+        bookRepository.save(book);
         return book;
     }
 

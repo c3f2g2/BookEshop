@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Black Books</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1><a href="/">Black Books</a></h1>
+
+    <form action="/login" method="post">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    <p><a href="/basket">Your basket</a></p>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="category.html">Categories</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+    <h2>Registration Form</h2>
+    <form action="/registeration" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="name" name="username" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="passwordToRegister" name="passwordToRegister" required>
+        </div>
+        <div>
+            <button type="submit">Register</button>
+        </div>
+    </form>
+</main>
+
+<footer>
+    <p>Contact us: manny.bianco@blackbooks.com</p>
+    <p>Black Books Ltd. London</p>
+</footer>
+
+<script src="/blackBooks.js"></script>
+
+</body>
+</html>
