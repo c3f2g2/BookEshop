@@ -9,3 +9,19 @@ window.onload = function() {
 };
 
 console.log("Hello, Nostr!");
+
+function askQuestion() {
+    var question = document.getElementById('question').value;
+    fetch('/api/chatgpt/ask', {
+        method: 'POST',
+        body: JSON.stringify(question),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('response').innerText = data;
+        })
+        .catch(error => console.error('Error:', error));
+}

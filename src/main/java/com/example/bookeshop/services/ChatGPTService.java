@@ -18,12 +18,12 @@ public class ChatGPTService {
 
     public ChatGPTService() {
         this.restTemplate = new RestTemplate();
-        this.apiBaseUrl = "https://api.openai.com/v1"; // Replace with actual API URL
+        this.apiBaseUrl = "https://api.openai.com/v1/chat/completions"; // Replace with actual API URL
     }
 
     public String getResponseFromChatGPT(String prompt) {
         try {
-            String url = apiBaseUrl + "/engines/davinci-codex/completions"; // Modify as needed
+            String url = apiBaseUrl + "https://api.openai.com/v1/chat/completions"; // Modify as needed
 
             HttpHeaders headers = new HttpHeaders();
             headers.setBearerAuth(apiKey);
