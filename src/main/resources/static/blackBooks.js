@@ -12,7 +12,7 @@ console.log("Hello, Nostr!");
 
 function askQuestion() {
     var question = document.getElementById('question').value;
-    fetch('/api/chatgpt/ask', {
+    fetch('/ask', {
         method: 'POST',
         body: JSON.stringify(question),
         headers: {
