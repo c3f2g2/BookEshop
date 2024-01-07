@@ -8,3 +8,4 @@ window.onload = function() {
     featuredBooks.style.opacity = 1;
 };
 
+console.log("Hello, Nostr!");
